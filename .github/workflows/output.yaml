@@ -15,7 +15,7 @@ jobs:
 
       - name: Set Output
         id: foo
-        run: echo "##[set-output name=hello;hello world"
+        run: echo "::set-output name=month::hello world"
 
       - name: Get Output
         run: echo ${{ steps.foo.outputs.hello }}
