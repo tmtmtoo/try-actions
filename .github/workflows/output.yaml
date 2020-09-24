@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Set Output
-        run: echo "::set-output name=hello::hello world"
+        run: echo ::set-output name=hello::hello world
 
       - name: Get Output
         run: echo ${{ steps.api.outputs.hello }}
