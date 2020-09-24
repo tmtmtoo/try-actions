@@ -6,8 +6,8 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    outputs:
-      month: ${{ steps.foo.outputs.hello }}
+    # outputs:
+    #  month: ${{ steps.foo.outputs.hello }}
 
     steps:
       - name: Set Output
