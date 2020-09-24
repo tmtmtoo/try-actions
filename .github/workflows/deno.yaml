@@ -17,6 +17,6 @@ jobs:
       - id: deno_hello
         run: |
           deno --version
-          echo "::set-output name=hello::'$(deno run hello.ts)'"
+          echo "::set-output name=hello::$(deno run hello.ts)"
 
       - run: echo ${{ steps.deno_hello.outputs.hello }}
