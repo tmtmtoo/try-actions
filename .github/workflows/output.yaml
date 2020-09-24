@@ -7,7 +7,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     outputs:
-      month: ${{ steps.foo.outputs.month }}
+      month: ${{ steps.foo.outputs.hello }}
 
     steps:
       #- name: Checkout
@@ -15,7 +15,7 @@ jobs:
 
       - name: Set Output
         id: foo
-        run: echo "::set-output name=month::hello world"
+        run: echo "::set-output name=hello::hello world"
 
       - name: Get Output
         run: echo ${{ steps.foo.outputs.hello }}
