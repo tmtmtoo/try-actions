@@ -1,0 +1,19 @@
+name: Deno
+
+on:
+  push:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: denolib/setup-deno@v2
+        with:
+          deno-version: v1.x
+
+      - uses: actions/checkout@v1
+
+      - run: |
+          deno --version
+          deno run hello.ts
