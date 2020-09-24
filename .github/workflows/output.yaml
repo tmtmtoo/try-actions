@@ -6,13 +6,16 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    outputs:
+      month: ${{ steps.foo.outputs.month }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
       - name: Set Output
-        run: echo ::set-output name=hello::hello world
+        id: foo
+        run: echo "##[set-output name=hello;hello world"
 
       - name: Get Output
-        run: echo ${{ steps.api.outputs.hello }}
+        run: echo ${{ steps.foo.outputs.hello }}
