@@ -10,12 +10,9 @@ jobs:
       month: ${{ steps.foo.outputs.hello }}
 
     steps:
-      #- name: Checkout
-      #  uses: actions/checkout@v1
-
       - name: Set Output
         id: foo
-        run: echo "::set-output name=hello::hello world"
+        run: echo "::set-output name=hello::$(date +%s)"
 
       - name: Get Output
         run: echo ${{ steps.foo.outputs.hello }}
