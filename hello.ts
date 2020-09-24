@@ -1,1 +1,6 @@
-console.log("hello world");
+console.log(`# Hoge
+- foo
+- bar
+## Piyo
+- hage
+`);
