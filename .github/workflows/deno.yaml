@@ -14,6 +14,9 @@ jobs:
 
       - uses: actions/checkout@v1
 
-      - run: |
+      - id: deno_hello
+        run: |
           deno --version
-          deno run hello.ts
+          echo "::set-output name=hello::$(deno run hello.ts)"
+
+      - run: echo ${{ steps.deno_hello.outputs.hello }}
