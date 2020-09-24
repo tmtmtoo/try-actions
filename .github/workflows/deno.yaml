@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  run:
+  deno:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,6 +17,8 @@ jobs:
       - id: deno_hello
         run: |
           deno --version
-          echo "::set-output name=hello::$(deno run hello.ts)"
+          deno run hello.ts
 
-      - run: echo ${{ steps.deno_hello.outputs.hello }}
+      - run: |
+          echo ${{ steps.deno_hello.outputs.foo }}
+          echo ${{ steps.deno_hello.outputs.bar }}
