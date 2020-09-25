@@ -1,0 +1,15 @@
+name: File
+
+on:
+  push:
+
+jobs:
+  file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Write File
+        run: echo "foobar" > ./file
+
+      - name: Read File
+        run: cat ./file
