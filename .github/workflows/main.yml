@@ -26,4 +26,9 @@ jobs:
           crate: cargo-outdated
           version: latest
 
-      - run: cargo outdated
+      - name: Cargo outdated
+        id: outdated
+        run: echo "::set-output name=text::$(cargo outdated)"
+      
+      - run: echo ${{ steps.outdated.outputs.text }}
+        
