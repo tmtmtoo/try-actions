@@ -28,7 +28,10 @@ jobs:
 
       - name: Cargo outdated
         id: outdated
-        run: echo "::set-output name=text::$(cargo outdated)"
+        run: |
+          text=$(cargo outdated)
+          text="${text//$'\n'/\\n}"
+          echo "::set-output name=text::$text"
       
       - run: echo ${{ steps.outdated.outputs.text }}
         
