@@ -19,7 +19,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          name: tmtmtoo/cx
+          repository: tmtmtoo/cx
+          path: cx
     
       - uses: actions-rs/install@v0.1
         with:
