@@ -27,4 +27,4 @@ jobs:
           crate: cargo-outdated
           version: latest
 
-      - run: cargo outdated
+      - run: ls -lat
